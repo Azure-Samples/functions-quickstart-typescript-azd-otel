@@ -7,9 +7,6 @@ import {
   output,
 } from "@azure/functions";
 
-// Import axios for making HTTP requests
-import axios from "axios";
-
 // Import OpenTelemetry API for tracing
 import otelAPI from "@opentelemetry/api";
 
