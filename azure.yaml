@@ -8,3 +8,4 @@ services:
     project: ./src/otel-sample
     language: ts
     host: function
+    remoteBuild: true
