@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: otel-http-trigger-typescript
+metadata:
+    template: otel-http-trigger-typescript@0.0.1
+services:
+  processor:
+    project: ./src/app
+    language: ts
+    host: function
+    remoteBuild: true
