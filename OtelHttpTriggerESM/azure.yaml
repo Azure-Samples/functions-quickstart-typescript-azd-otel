@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: otel-http-trigger-esm
+metadata:
+    template: otel-http-trigger-esm@0.0.1
+services:
+  processor:
+    project: ./src/app
+    language: js
+    host: function
+    remoteBuild: true
