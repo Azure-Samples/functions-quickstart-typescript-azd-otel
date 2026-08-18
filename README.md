@@ -144,7 +144,9 @@ export async function firstHttpFunction(
 
   try {
     // Call the second function
-    const baseUrl = request.url.split("/api/")[0];
+    const baseUrl = process.env.WEBSITE_HOSTNAME
+      ? `https://${process.env.WEBSITE_HOSTNAME}`
+      : "http://localhost:7071";
     const secondFunctionUrl = `${baseUrl}/api/second_http_function`;
 
     const response = await axios.get(secondFunctionUrl);
@@ -165,13 +167,10 @@ export async function firstHttpFunction(
       },
     };
   } catch (error) {
-    context.log("Error occurred:", error);
+    context.error("Error occurred:", error);
     return {
       status: 500,
-      body: JSON.stringify({
-        error: "Failed to process request",
-        message: error.message,
-      }),
+      body: JSON.stringify({ error: "Failed to process request" }),
       headers: {
         "Content-Type": "application/json",
       },
